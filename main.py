@@ -1,7 +1,7 @@
 import click
 import launcher
 
-# 定义一个组
+# 定义一个组，组里可容纳多个命令
 @click.group()
 def cli():
     pass
