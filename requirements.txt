@@ -1,2 +1,4 @@
 click
 apscheduler
+requests
+fake_useragent
