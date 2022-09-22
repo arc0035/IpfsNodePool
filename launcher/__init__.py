@@ -1,4 +1,4 @@
-from launcher import fetcher
+from launcher import fetcher_launcher
 
 
-__all__ = ['fetcher']
+__all__ = ['fetcher_launcher.py']

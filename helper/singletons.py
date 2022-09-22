@@ -1,9 +1,8 @@
-def singleton(cls):
-    instances = dict()
+def SingletonMeta(type):
+    _instances = {}
 
-    def init(*args, **kargs):
-        if cls not in instances:
-            instances[cls] = cls(*args, **kargs)
-        return instances[cls]
+    def __call__(cls, *args, **kwargs):
+        if cls not in  cls._instances:
+            cls._instances[cls] = super(SingletonMeta, cls).__call__(*args, **kwargs)
+        return cls._instances[cls]
 
-    return init

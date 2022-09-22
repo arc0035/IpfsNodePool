@@ -1,16 +1,14 @@
 
-class SingletonMeta(type):
-    _instances = {}
-
-    # __call__控制类的对象创建逻辑
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(SingletonMeta, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
+class Parent:
+    def __init__(self):
+        print('Parent')
 
 
-class Demo(metaclass=SingletonMeta):
-    pass
+class Son(Parent):
+    def __init__(self):
+        # Parent.__init__(self) # method 1
+        # super(Son, self).__init__() # method 2
+        print('son')
 
-d1 = Demo()
-d2 = Demo() # d1 ,d2 are same, becasue d2 is cached singleton
+s = Son()
+

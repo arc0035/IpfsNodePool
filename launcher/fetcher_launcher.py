@@ -1,7 +1,9 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-
+import fetch.fetchers as fetchers
+from fetch.fetcher_interface import FetcherInterface
 def fetch_job():
-    pass
+    for f in fetchers.fetcher_list:
+        f.fetch()
 
 def run_fetcher():
     print('fetcher lunched!')

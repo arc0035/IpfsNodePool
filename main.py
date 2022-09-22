@@ -9,7 +9,7 @@ def cli():
 # 定义fetch命令
 @click.command()
 def fetch():
-    launcher.fetcher.run_fetcher()
+    launcher.fetcher_launcher.run_fetcher()
 
 # 定义web命令
 @click.command()

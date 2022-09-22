@@ -13,14 +13,8 @@ class FetcherIpfsGithubIo(FetcherInterface):
     def url(self):
         return 'https://ipfs.github.io/public-gateway-checker/'
 
-    def fetch(self):
-        url_str = self.url()
-        resp = requests.get(url_str, headers={
-            'User-Agent': super().user_agent.random
-        })
-        if resp.status_code == 200:
-            pass
-
+    def parse(self, resp):
+        print(resp.text)
 
 
 

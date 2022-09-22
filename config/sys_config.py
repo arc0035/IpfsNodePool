@@ -4,8 +4,7 @@ sys.path.append("..")
 import settings
 from helper.singletons import *
 
-@singleton
-class SysConfig(object):
+class SysConfig(metaclass=SingletonMeta):
 
     def __init__(self):
         pass
